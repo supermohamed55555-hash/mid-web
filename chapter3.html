@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Lists, Tables & Forms | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Table Styling Overrides for Cyber Look */
+        .cyber-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: rgba(20, 20, 20, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+        }
+        .cyber-table th {
+            background: rgba(0, 247, 255, 0.1);
+            color: var(--primary);
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.3);
+        }
+        .cyber-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        /* Form Styling Overrides */
+        .cyber-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 500px;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        .cyber-form label {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: -1rem;
+        }
+        .cyber-input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            color: white;
+            transition: var(--transition);
+        }
+        .cyber-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+        }
+        .cyber-btn {
+            background: var(--primary);
+            color: var(--bg-deep);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .cyber-btn:hover {
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">03</div>
+            <h1>Lists, Tables & Forms</h1>
+            <p>Structuring complex data and handling user interactions with advanced HTML elements.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: LISTS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">HTML Lists</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        A list in HTML is used to group related items together in an organized way.
+                    </div>
+                    <div class="lang-ar">
+                        الـ List في HTML بتستخدم عشان تجمع عناصر مرتبطة ببعض بشكل منظم.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unordered List -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Unordered List &lt;ul&gt;</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        The &lt;ul&gt; element represents an unordered list. Items are displayed with bullets, and their order does not matter.
+                    </div>
+                    <div class="lang-ar">
+                        عنصر &lt;ul&gt; بيستخدم لعمل قائمة غير مرتبة، والعناصر بتظهر على شكل نقط (Bullets)، والترتيب مش مهم.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;ul&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Milk&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Cheese&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Bread&lt;/li&gt;<br>
+                    &lt;/ul&gt;
+                </div>
+            </div>
+
+            <!-- Ordered List -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Ordered List &lt;ol&gt;</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        The &lt;ol&gt; element represents an ordered list. Items are displayed with numbers, and the order matters.
+                    </div>
+                    <div class="lang-ar">
+                        عنصر &lt;ol&gt; بيستخدم لعمل قائمة مرتبة، والعناصر بتظهر بأرقام والترتيب فيها مهم.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;ol&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Step 1&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Step 2&lt;/li&gt;<br>
+                    &lt;/ol&gt;
+                </div>
+            </div>
+
+            <!-- Nesting Lists -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Nested & Mixed Lists</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        You can place a list inside another list. This is called nesting. You can also mix ordered and unordered lists together.
+                    </div>
+                    <div class="lang-ar">
+                        ممكن تحط قائمة جوه قائمة تانية، وده اسمه Nesting. وممكن كمان تدمج بين الـ &lt;ul&gt; والـ &lt;ol&gt; في نفس الوقت.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;ul&gt;<br>
+                    &nbsp;&nbsp;&lt;li&gt;Cheese<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Blue cheese&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &nbsp;&nbsp;&lt;/li&gt;<br>
+                    &lt;/ul&gt;
+                </div>
+            </div>
+
+            <!-- SECTION 2: TABLES -->
+            <div class="section-block">
+                <h4 class="section-subtitle">HTML Tables</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        A table is used to display structured data in rows and columns.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Table بيستخدم لعرض البيانات في شكل صفوف وأعمدة منظمة.
+                    </div>
+                </div>
+                <div class="diagram-container">
+                    <table class="cyber-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Skill</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmed</td>
+                                <td>20</td>
+                                <td>HTML</td>
+                            </tr>
+                            <tr>
+                                <td>Mona</td>
+                                <td>22</td>
+                                <td>CSS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code-block">
+                    &lt;table&gt;<br>
+                    &nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Age&lt;/th&gt;<br>
+                    &nbsp;&nbsp;&lt;/tr&gt;<br>
+                    &nbsp;&nbsp;&lt;tr&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ahmed&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;20&lt;/td&gt;<br>
+                    &nbsp;&nbsp;&lt;/tr&gt;<br>
+                    &lt;/table&gt;
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>&lt;table&gt;:</strong> Container. <br>
+                        <strong>&lt;tr&gt;:</strong> Table Row. <br>
+                        <strong>&lt;th&gt;:</strong> Header Cell (Bold). <br>
+                        <strong>&lt;td&gt;:</strong> Data Cell.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>table:</strong> الجدول نفسه. <br>
+                        <strong>tr:</strong> الصف. <br>
+                        <strong>th:</strong> عنوان العمود (بيكون تقيل). <br>
+                        <strong>td:</strong> البيانات اللي جوه الخلية.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: FORMS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">HTML Forms</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        A form is used to collect user input, like logins, registrations, or search queries.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Form بيستخدم عشان ياخد بيانات من المستخدم، زي تسجيل دخول أو بيانات شخصية.
+                    </div>
+                </div>
+                <div class="diagram-container">
+                    <form class="cyber-form" onsubmit="return false;">
+                        <label>Name:</label>
+                        <input type="text" class="cyber-input" placeholder="Your Name">
+                        <label>Password:</label>
+                        <input type="password" class="cyber-input" placeholder="Your Password">
+                        <button class="cyber-btn">LOGIN</button>
+                    </form>
+                </div>
+                <div class="code-block">
+                    &lt;form&gt;<br>
+                    &nbsp;&nbsp;&lt;label&gt;Name:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text"&gt;<br><br>
+                    &nbsp;&nbsp;&lt;label&gt;Password:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="password"&gt;<br><br>
+                    &nbsp;&nbsp;&lt;button&gt;Login&lt;/button&gt;<br>
+                    &lt;/form&gt;
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Common Input Types:</strong> text, email, password, submit. <br>
+                        <strong>Attributes:</strong> placeholder (hint), type (behavior), name (ID for backend).
+                    </div>
+                    <div class="lang-ar">
+                        <strong>أنواع المدخلات:</strong> نص (text)، إيميل (email)، كلمة سر (password). <br>
+                        <strong>الخصائص:</strong> placeholder (نص توضيحي)، type (نوع الإدخال).
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

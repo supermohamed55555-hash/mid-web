@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: CSS Selectors | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Specificity Chart */
+        .specificity-chart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        .spec-item.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.1);
+        }
+        .spec-icon {
+            font-size: 2.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .spec-label { color: var(--text-dim); font-size: 0.9rem; }
+        .spec-power { color: var(--primary); font-weight: 700; margin-top: 0.5rem; display: block; }
+
+        .syntax-symbol { color: var(--secondary); font-weight: 800; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">05</div>
+            <h1>CSS Selectors</h1>
+            <p>Targeting HTML elements with precision to create stunning designs and maintainable codebases.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: WHAT IS A SELECTOR -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is a Selector?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        A CSS selector is used to target HTML elements so you can apply styles to them. It is the first part of any CSS rule.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Selector في CSS بيستخدم عشان تحدد العناصر اللي عايز تطبق عليها التصميم، وهو دا بيبقى أول جزء في أي قاعدة CSS بتكتبها.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: SPECIFICITY CHART (Visual Aid) -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Specificity Hierarchy</h4>
+                <div class="specificity-chart">
+                    <div class="spec-item">
+                        <span class="spec-icon">*</span>
+                        <span class="spec-label">Universal Selector</span>
+                        <span class="spec-power">Power: 0</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-icon">div</span>
+                        <span class="spec-label">Element Selector</span>
+                        <span class="spec-power">Power: 1</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-icon syntax-symbol">.</span>class
+                        <span class="spec-label">Class Selector</span>
+                        <span class="spec-power">Power: 10</span>
+                    </div>
+                    <div class="spec-item active">
+                        <span class="spec-icon syntax-symbol" style="color: var(--primary);">#</span>id
+                        <span class="spec-label">ID Selector</span>
+                        <span class="spec-power" style="color: var(--primary);">Power: 100</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: TYPE SELECTOR -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Type Selector (Element)</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Targets all elements of a specific type (tag name). Use it for global styles like general text or headers.
+                    </div>
+                    <div class="lang-ar">
+                        بيحدد كل العناصر اللي من نوع معين في الصفحة كلها (زي كل الـ p أو كل الـ h1).
+                    </div>
+                </div>
+                <div class="code-block">
+                    p { <br>
+                    &nbsp;&nbsp;color: blue; <br>
+                    }
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Result: All &lt;p&gt; tags will turn blue.</p>
+            </div>
+
+            <!-- SECTION 4: CLASS SELECTOR -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Class Selector</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Starts with a dot (.) and targets any element with that specific class. You can use a class multiple times in one page.
+                    </div>
+                    <div class="lang-ar">
+                        بيبدأ بنقطة (.) وبيحدد أي عنصر مدي له الكلاس دا. تقدر تستخدم الكلاس أكتر من مرة عادي في نفس الصفحة.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;p class="highlight"&gt;Hello&lt;/p&gt;<br><br>
+                    .highlight { <br>
+                    &nbsp;&nbsp;background: yellow; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 5: TARGET CLASS WITH ELEMENT -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Targeting Class within Element</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        You can target a class only when it is applied to a specific element type.
+                    </div>
+                    <div class="lang-ar">
+                        ممكن تحدد كلاس معين بس لو كان موجود داخل تـاج (tag) معين انت عايزه.
+                    </div>
+                </div>
+                <div class="code-block">
+                    span.highlight { <br>
+                    &nbsp;&nbsp;color: red; <br>
+                    }
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Result: Only &lt;span&gt; with 'highlight' class will be affected.</p>
+            </div>
+
+            <!-- SECTION 6: ID SELECTOR -->
+            <div class="section-block">
+                <h4 class="section-subtitle">ID Selector</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Starts with # and targets a unique element. Each ID must be unique per page.
+                    </div>
+                    <div class="lang-ar">
+                        بيبدأ بعلامة الـ # وبيحدد عنصر واحد بس "بصمة". ممنوع تكرر نفس الـ ID مرتين في نفس الصفحة.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;h1 id="title"&gt;Hello&lt;/h1&gt;<br><br>
+                    #title { <br>
+                    &nbsp;&nbsp;color: green; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 7: MULTIPLE CLASSES -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Multiple Classes</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        An element can have more than one class. You can target elements that have all specified classes.
+                    </div>
+                    <div class="lang-ar">
+                        العنصر ممكن يكون واخد كلاسين أو أكتر في نفس الوقت، وتقدر تستهدف العنصر اللي فيه الكلاسين بالملي.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;div class="box warning"&gt;&lt;/div&gt;<br><br>
+                    .box.warning { <br>
+                    &nbsp;&nbsp;border: 2px solid red; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 8: SELECTOR LISTS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Selector Lists</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Apply the same style to multiple selectors by separating them with commas.
+                    </div>
+                    <div class="lang-ar">
+                        ممكن تطبق نفس الستايل على أكتر من عنصر مرة واحدة باستخدام الفاصلة بين الـ selectors.
+                    </div>
+                </div>
+                <div class="code-block">
+                    h1, p { <br>
+                    &nbsp;&nbsp;color: blue; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 9: UNIVERSAL SELECTOR -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Universal Selector</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        The asterisk (*) selects all elements on the page. Usually used for resets.
+                    </div>
+                    <div class="lang-ar">
+                        النجمة (*) بتحدد كل العناصر اللي موجودة في الصفحة من أولها لآخرها (عادة بنستخدمها للـ Reset).
+                    </div>
+                </div>
+                <div class="code-block">
+                    * { <br>
+                    &nbsp;&nbsp;margin: 0; <br>
+                    &nbsp;&nbsp;padding: 0; <br>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: CSS Basics | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Box Model Visualization */
+        .box-model-demo {
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+        .box-outer {
+            padding: 30px;
+            background: rgba(255, 0, 229, 0.1); /* Margin color placeholder */
+            border: 2px solid var(--secondary);
+            text-align: center;
+            position: relative;
+        }
+        .box-outer::before { content: 'MARGIN'; position: absolute; top: 5px; left: 10px; font-size: 0.7rem; color: var(--secondary); }
+        
+        .box-border {
+            border: 4px solid var(--primary);
+            padding: 20px;
+            background: rgba(0, 247, 255, 0.1);
+            position: relative;
+        }
+        .box-border::before { content: 'BORDER'; position: absolute; top: 2px; left: 5px; font-size: 0.7rem; color: var(--primary); }
+
+        .box-padding {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        .box-padding::before { content: 'PADDING'; position: absolute; top: 2px; left: 5px; font-size: 0.7rem; color: white; }
+
+        .box-content {
+            background: var(--primary);
+            color: var(--bg-deep);
+            padding: 15px 30px;
+            font-weight: 800;
+            border-radius: 4px;
+        }
+
+        /* Syntax Highlight */
+        .syntax-key { color: var(--primary); }
+        .syntax-prop { color: var(--secondary); }
+        .syntax-val { color: #ffcc00; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">04</div>
+            <h1>CSS Basics</h1>
+            <p>Bringing style, life, and structure to your web pages with Cascading Style Sheets.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: WHAT IS CSS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is CSS?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        CSS (Cascading Style Sheets) is used to style and design web pages. It controls how HTML elements look — such as colors, fonts, spacing, and layout.
+                    </div>
+                    <div class="lang-ar">
+                        CSS هي اللغة المسؤولة عن شكل وتصميم الموقع، وهي اللي بتتحكم في الألوان، الخطوط، المسافات، وشكل الصفحة العام.
+                    </div>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>HTML</strong> is used for structure (skeleton), while <strong>CSS</strong> is used for design (skin/clothes). Without CSS, pages look plain.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>HTML</strong> بيبني هيكل الصفحة، لكن <strong>CSS</strong> بيخليها شكلها شيك. من غير CSS الموقع هيبقى عبارة عن نصوص بسيطة تحت بعضها.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: SYNTAX -->
+            <div class="section-block">
+                <h4 class="section-subtitle">CSS Syntax</h4>
+                <div class="code-block">
+                    <span class="syntax-key">p</span> { <br>
+                    &nbsp;&nbsp;<span class="syntax-prop">color</span>: <span class="syntax-val">blue</span>; <br>
+                    &nbsp;&nbsp;<span class="syntax-prop">font-size</span>: <span class="syntax-val">20px</span>; <br>
+                    }
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Selector:</strong> The HTML element you want to style (p). <br>
+                        <strong>Property:</strong> What aspect you want to change (color). <br>
+                        <strong>Value:</strong> The specific style you want to apply (blue).
+                    </div>
+                    <div class="lang-ar">
+                        <strong>Selector:</strong> دا العنصر اللي هنغير شكله. <br>
+                        <strong>Property:</strong> دي الخاصية اللي هنعدلها (زي اللون). <br>
+                        <strong>Value:</strong> دي القيمة اللي عايزينها تظهر (زي لون أبيض مثلاً).
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: ADDING CSS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Ways to Add CSS</h4>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div class="status-item" style="text-align: left;">
+                        <span class="status-code">Inline</span>
+                        <p style="font-size: 0.8rem; margin: 10px 0;">Style inside HTML tag.</p>
+                        <code>&lt;p style="color:red"&gt;</code>
+                    </div>
+                    <div class="status-item" style="text-align: left;">
+                        <span class="status-code">Internal</span>
+                        <p style="font-size: 0.8rem; margin: 10px 0;">Style inside &lt;head&gt;.</p>
+                        <code>&lt;style&gt;...&lt;/style&gt;</code>
+                    </div>
+                    <div class="status-item" style="text-align: left; border-color: var(--primary);">
+                        <span class="status-code">External</span>
+                        <p style="font-size: 0.8rem; margin: 10px 0;">Separate .css file (Best Practice).</p>
+                        <code>&lt;link rel="stylesheet"&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: SELECTORS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">CSS Selectors</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Selectors point to the HTML elements you want to style.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Selectors بتحدد بالضبط أي جزء في الصفحة انت عايز تظبط شكله.
+                    </div>
+                </div>
+                <div class="status-grid" style="margin-top: 1rem;">
+                    <div class="status-item">
+                        <span class="status-code">p</span>
+                        <span class="status-label">Element Selector</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-code" style="color: var(--secondary);">.box</span>
+                        <span class="status-label">Class Selector</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-code" style="color: #ffcc00;">#title</span>
+                        <span class="status-label">ID Selector</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: BOX MODEL -->
+            <div class="section-block">
+                <h4 class="section-subtitle">The Box Model</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Every element in CSS is treated as a box. It consists of: Content, Padding, Border, and Margin.
+                    </div>
+                    <div class="lang-ar">
+                        كل عنصر في CSS بيعتبر صندوق (Box). بيتكون من: المحتوى، الحشو (Padding)، الحدود (Border)، والمسافة الخارجية (Margin).
+                    </div>
+                </div>
+                <div class="box-model-demo">
+                    <div class="box-outer">
+                        <div class="box-border">
+                            <div class="box-padding">
+                                <div class="box-content">CONTENT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Margin:</strong> Space outside the border. <br>
+                        <strong>Border:</strong> Line around padding and content. <br>
+                        <strong>Padding:</strong> Space inside the border, around content.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>Margin:</strong> المسافة اللي بره حدود العنصر. <br>
+                        <strong>Border:</strong> الخط اللي بيفصل بين بره وجوه. <br>
+                        <strong>Padding:</strong> المسافة اللي بين المحتوى والحدود من جوه.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: PRIORITY -->
+            <div class="section-block">
+                <h4 class="section-subtitle">CSS Priority</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        CSS decides which style to apply based on Specificity (ID > Class > Element), Order, and Importance (!important).
+                    </div>
+                    <div class="lang-ar">
+                        لو فيه أكتر من ستايل لنفس الحاجة، CSS بيختار الأقوى فيهم. الـ ID أقوى من الـ Class، والـ Class أقوى من العنصر العادي.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: UNITS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Values and Units</h4>
+                <div class="status-grid">
+                    <div class="status-item"><span class="status-code">px</span><span class="status-label">Pixels (Fixed)</span></div>
+                    <div class="status-item"><span class="status-code">%</span><span class="status-label">Percentage</span></div>
+                    <div class="status-item"><span class="status-code">vw/vh</span><span class="status-label">Viewport Unit</span></div>
+                </div>
+            </div>
+
+            <!-- SECTION 8: OVERFLOW -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Overflow</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Overflow happens when content is too large for its container. You can hide it, scroll it, or let it show.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Overflow بيحصل لما الكلام يكون كتير والمكان ضيق. بنتحكم فيه عشان ميبوظش شكل الصفحة.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

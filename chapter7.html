@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Advanced Text Styling | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Link State Demo */
+        .link-demo-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px dashed rgba(0, 247, 255, 0.2);
+            justify-content: center;
+        }
+        .demo-link {
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .link-normal { color: var(--primary); border-color: var(--primary); }
+        .link-hover { background: var(--primary); color: var(--bg-deep); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3); }
+        .link-visited { color: var(--secondary); border-color: var(--secondary); opacity: 0.7; }
+
+        /* List Styles Grid */
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .list-demo-item {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .list-demo-item ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">07</div>
+            <h1>Advanced Text Styling</h1>
+            <p>Going beyond basics: Interactivity, Web Fonts, and sophisticated layout controls.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: WHAT IS ADVANCED TEXT STYLING -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is Advanced Text Styling?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Advanced styling focuses on interactivity (links), custom resources (Web Fonts), and fine-tuning the reading experience.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Advanced Styling بيهتم أكتر بالتفاعل مع المستخدم (زي اللينكات)، واستخدام مصادر خارجية زي خطوط جوجل، وتظبيط التفاصيل اللي بتخلي القراءة ممتعة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: STYLING LINKS (STATES) -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Styling Links (States)</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Links change their appearance based on user interaction: Normal, Hover, and Visited.
+                    </div>
+                    <div class="lang-ar">
+                        اللينكات في الـ CSS ليها حالات مختلفة حسب انت عملت إيه؛ سواء لسة شايف اللينك، أو واقف عليه بالماوس، أو ضغطت عليه قبل كدة.
+                    </div>
+                </div>
+                <div class="link-demo-container">
+                    <div style="text-align: center;">
+                        <span style="display:block; font-size: 0.7rem; color: var(--text-dim); margin-bottom: 0.5rem;">NORMAL</span>
+                        <a href="#" class="demo-link link-normal" onclick="return false;">Click Me</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <span style="display:block; font-size: 0.7rem; color: var(--text-dim); margin-bottom: 0.5rem;">HOVER (🔥)</span>
+                        <a href="#" class="demo-link link-hover" onclick="return false;">Hovered</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <span style="display:block; font-size: 0.7rem; color: var(--text-dim); margin-bottom: 0.5rem;">VISITED</span>
+                        <a href="#" class="demo-link link-visited" onclick="return false;">Visited</a>
+                    </div>
+                </div>
+                <div class="code-block">
+                    a { color: blue; } <br>
+                    a:hover { color: red; text-decoration: underline; } <br>
+                    a:visited { color: purple; }
+                </div>
+            </div>
+
+            <!-- SECTION 3: WEB FONTS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Web Fonts</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Web Fonts allow you to use custom styles from the web (like Google Fonts) so your site looks the same for everyone.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Web Fonts بتخليك تستخدم خطوط مش موجودة عند المستخدم أصلاً، وبتحملها من النت زي خطوط جوجل المشهورة.
+                    </div>
+                </div>
+                <div class="code-block" style="border-left-color: #ffcc00;">
+                    @import url('https://fonts.googleapis.com/css2?family=Roboto'); <br><br>
+                    body { <br>
+                    &nbsp;&nbsp;font-family: 'Roboto', sans-serif; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 4: LIST STYLING -->
+            <div class="section-block">
+                <h4 class="section-subtitle">List Styling</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        You can change the bullet type or replace it entirely.
+                    </div>
+                    <div class="lang-ar">
+                        بتقدر تغير شكل النقطة (Bullet) بتاعة القائمة، تخليها مربع، دايرة، أو حتى تشيلها خالص.
+                    </div>
+                </div>
+                <div class="list-grid">
+                    <div class="list-demo-item">
+                        <span class="preview-label">SQUARE</span>
+                        <ul style="list-style-type: square;">
+                            <li>Item A</li>
+                            <li>Item B</li>
+                        </ul>
+                    </div>
+                    <div class="list-demo-item">
+                        <span class="preview-label">CIRCLE</span>
+                        <ul style="list-style-type: circle;">
+                            <li>Item A</li>
+                            <li>Item B</li>
+                        </ul>
+                    </div>
+                    <div class="list-demo-item">
+                        <span class="preview-label">NONE (أشهر استخدام)</span>
+                        <ul style="list-style-type: none;">
+                            <li>Item A</li>
+                            <li>Item B</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: TEXT EFFECTS REVIEW -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Layout & Special Effects</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <b>Justify:</b> Spreads text evenly. <br>
+                        <b>Line Height:</b> Crucial for readability. <br>
+                        <b>Letter Spacing:</b> Adds room for a "Cyber" look.
+                    </div>
+                    <div class="lang-ar">
+                        <b>Justify:</b> بيوزع الكلام بالتساوي. <br>
+                        <b>Line Height:</b> أهم حاجة عشان العين متتعبش وهي بتقرأ. <br>
+                        <b>Letter Spacing:</b> بيعمل مسافات بين الحروف وبيدي شكل شيك (Cyber Look).
+                    </div>
+                </div>
+                <div class="code-block">
+                    p { <br>
+                    &nbsp;&nbsp;text-align: justify; <br>
+                    &nbsp;&nbsp;line-height: 1.8; <br>
+                    &nbsp;&nbsp;letter-spacing: 1px; <br>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

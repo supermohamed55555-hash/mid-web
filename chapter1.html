@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: How the Web Works | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+        /* Override modal scroll for full page */
+        .chapter-content {
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">01</div>
+            <h1>How the Web Works</h1>
+            <p>Understanding the architecture, protocols, and communication of the modern internet.</p>
+        </header>
+
+        <div class="chapter-content">
+            <!-- Section 1: What is the Web? -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is the Web?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        The Web (World Wide Web) is a system that allows users to access and view websites through a web browser. Websites are made of files like HTML, CSS, and JavaScript that are displayed in a structured way.
+                    </div>
+                    <div class="lang-ar">
+                        الويب (World Wide Web) هو نظام بيسمح للمستخدمين يفتحوا ويشوفوا المواقع باستخدام المتصفح. المواقع دي بتكون عبارة عن ملفات زي HTML و CSS و JavaScript وبتتجمع عشان تظهرلك صفحة كاملة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Clients vs Servers -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Clients vs Servers</h4>
+                <div class="diagram-container">
+                    <svg width="400" height="150" viewBox="0 0 400 150">
+                        <!-- Client -->
+                        <rect x="20" y="40" width="80" height="60" rx="5" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <rect x="30" y="50" width="60" height="35" rx="2" fill="var(--primary)" opacity="0.2" />
+                        <text x="60" y="120" fill="var(--primary)" font-size="12" text-anchor="middle">CLIENT (You)</text>
+                        
+                        <!-- Arrows -->
+                        <path d="M 110 65 L 290 65" stroke="var(--text-dim)" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+                        <path d="M 290 85 L 110 85" stroke="var(--primary)" stroke-width="2" fill="none" marker-end="url(#arrow-primary)" />
+                        <text x="200" y="60" fill="var(--text-dim)" font-size="10" text-anchor="middle">Request</text>
+                        <text x="200" y="105" fill="var(--primary)" font-size="10" text-anchor="middle">Response</text>
+
+                        <!-- Server -->
+                        <rect x="300" y="30" width="80" height="80" rx="5" fill="none" stroke="var(--secondary)" stroke-width="2" />
+                        <line x1="310" y1="50" x2="370" y2="50" stroke="var(--secondary)" opacity="0.5" />
+                        <line x1="310" y1="70" x2="370" y2="70" stroke="var(--secondary)" opacity="0.5" />
+                        <line x1="310" y1="90" x2="370" y2="90" stroke="var(--secondary)" opacity="0.5" />
+                        <text x="340" y="130" fill="var(--secondary)" font-size="12" text-anchor="middle">SERVER</text>
+
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orientation="auto">
+                                <path d="M0,0 L0,10 L10,5 Z" fill="var(--text-dim)" />
+                            </marker>
+                            <marker id="arrow-primary" markerWidth="10" markerHeight="10" refX="9" refY="5" orientation="auto">
+                                <path d="M0,0 L0,10 L10,5 Z" fill="var(--primary)" />
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Client:</strong> Your device and browser. <br>
+                        <strong>Server:</strong> A powerful computer storing the website.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>الـ Client:</strong> هو جهازك (موبايل أو لابتوب) + المتصفح اللي بتستخدمه. <br>
+                        <strong>الـ Server:</strong> هو جهاز قوي بيخزن المواقع ويبعتها لما تطلبها.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: How it Works (Flow) -->
+            <div class="section-block">
+                <h4 class="section-subtitle">How it Works (Step-by-Step)</h4>
+                <div class="diagram-container">
+                    <svg width="600" height="100" viewBox="0 0 600 100">
+                        <!-- Steps circles -->
+                        <circle cx="50" cy="50" r="20" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <text x="50" y="55" fill="var(--primary)" font-size="14" text-anchor="middle">1</text>
+                        
+                        <line x1="70" y1="50" x2="130" y2="50" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4" />
+                        
+                        <circle cx="150" cy="50" r="20" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <text x="150" y="55" fill="var(--primary)" font-size="14" text-anchor="middle">2</text>
+                        
+                        <line x1="170" y1="50" x2="230" y2="50" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4" />
+                        
+                        <circle cx="250" cy="50" r="20" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <text x="250" y="55" fill="var(--primary)" font-size="14" text-anchor="middle">3</text>
+                        
+                        <line x1="270" y1="50" x2="330" y2="50" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4" />
+
+                        <circle cx="350" cy="50" r="20" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <text x="350" y="55" fill="var(--primary)" font-size="14" text-anchor="middle">4</text>
+
+                        <line x1="370" y1="50" x2="430" y2="50" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4" />
+
+                        <circle cx="450" cy="50" r="20" fill="none" stroke="var(--primary)" stroke-width="2" />
+                        <text x="450" y="55" fill="var(--primary)" font-size="14" text-anchor="middle">5</text>
+                        
+                        <!-- Labels -->
+                        <text x="50" y="85" fill="var(--text-dim)" font-size="10" text-anchor="middle">DNS lookup</text>
+                        <text x="150" y="85" fill="var(--text-dim)" font-size="10" text-anchor="middle">HTTP Request</text>
+                        <text x="250" y="85" fill="var(--text-dim)" font-size="10" text-anchor="middle">Processing</text>
+                        <text x="350" y="85" fill="var(--text-dim)" font-size="10" text-anchor="middle">Sending Files</text>
+                        <text x="450" y="85" fill="var(--text-dim)" font-size="10" text-anchor="middle">Rendering</text>
+                    </svg>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        1. Check DNS for Server IP. <br>
+                        2. Send HTTP Request. <br>
+                        3. Server processes it. <br>
+                        4. Server sends website files. <br>
+                        5. Browser displays the page.
+                    </div>
+                    <div class="lang-ar">
+                        1. المتصفح يسأل DNS عن عنوان السيرفر. <br>
+                        2. يبعت طلب (Request) للسيرفر. <br>
+                        3. السيرفر يستقبل الطلب ويعالجه. <br>
+                        4. السيرفر يبعت ملفات الموقع. <br>
+                        5. المتصفح يجمع الملفات ويعرض الصفحة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Components -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Main Components</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Internet Connection:</strong> The network allowing communication. <br>
+                        <strong>DNS:</strong> Translates names (google.com) to IPs. <br>
+                        <strong>TCP/IP:</strong> Rules for data transmission. <br>
+                        <strong>HTTP:</strong> The language between client and server.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>اتصال الإنترنت:</strong> ده اللي بيخلي جهازك يقدر يبعت ويستقبل بيانات. <br>
+                        <strong>الـ DNS:</strong> زي دليل التليفونات، بيحول اسم الموقع لعنوان رقمي (IP). <br>
+                        <strong>الـ TCP/IP:</strong> قواعد أو قوانين بتنظم إزاي البيانات تتحرك بين الأجهزة. <br>
+                        <strong>الـ HTTP:</strong> هو اللغة اللي بيتكلم بيها المتصفح مع السيرفر.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Packets -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Packets</h4>
+                <div class="diagram-container" style="flex-direction: column; gap: 1rem;">
+                     <div style="display: flex; gap: 0.5rem;">
+                        <div style="width: 40px; height: 40px; background: var(--primary); opacity: 0.8; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px;">Header</div>
+                        <div style="width: 60px; height: 40px; background: var(--secondary); opacity: 0.5; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px;">Payload</div>
+                     </div>
+                     <p style="font-size: 0.8rem; color: var(--text-dim);">Data is split into small chunks for efficiency.</p>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Data is divided into small pieces called packets. Each has a Header (info) and Payload (data).
+                    </div>
+                    <div class="lang-ar">
+                        البيانات على الإنترنت مبتتبعتش مرة واحدة، بتتقسم لأجزاء صغيرة اسمها Packets. كل جزء فيه معلومات (Header) والبيانات نفسها (Payload).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Request/Response -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Request & Response</h4>
+                <div class="code-block">GET / HTTP/2</div>
+                <div class="code-block" style="border-color: var(--primary);">HTTP/2 200 OK</div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Request:</strong> Browser asks for data. <br>
+                        <strong>Response:</strong> Server sends requested data.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>الطلب:</strong> المتصفح بيبعت طلب عشان يجيب صفحة. <br>
+                        <strong>الرد:</strong> السيرفر بيرد بالبيانات المطلوبة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Status Codes -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Status Codes</h4>
+                <div class="status-grid">
+                    <div class="status-item"><span class="status-code">200</span><span class="status-label">Success</span></div>
+                    <div class="status-item"><span class="status-code" style="color: var(--secondary)">301</span><span class="status-label">Redirect</span></div>
+                    <div class="status-item"><span class="status-code" style="color: #ff4d4d">404</span><span class="status-label">Not Found</span></div>
+                    <div class="status-item"><span class="status-code" style="color: #ffcc00">500</span><span class="status-label">Server Error</span></div>
+                </div>
+            </div>
+
+            <!-- Section 8: URL Structure -->
+            <div class="section-block">
+                <h4 class="section-subtitle">URL Structure</h4>
+                <div class="url-box">
+                    <span class="url-part url-proto">https</span>
+                    <span>://</span>
+                    <span class="url-part url-domain">developer.mozilla.org</span>
+                    <span class="url-part url-path">/en-US/</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

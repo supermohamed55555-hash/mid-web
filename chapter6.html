@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Fonts & Text Styling | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Text Comparison Styles */
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .preview-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        .preview-label { color: var(--primary); font-size: 0.8rem; margin-bottom: 1rem; display: block; border-left: 2px solid var(--primary); padding-left: 10px; }
+        
+        .font-serif { font-family: 'Times New Roman', serif; font-size: 1.5rem; }
+        .font-sans { font-family: 'Arial', sans-serif; font-size: 1.5rem; }
+        .font-mono { font-family: 'Courier New', monospace; font-size: 1.5rem; }
+
+        .shadow-demo {
+            text-shadow: 4px 4px 10px var(--secondary);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">06</div>
+            <h1>Fonts & Text Styling</h1>
+            <p>Mastering typography: How to control layout, legibility, and visual impact of text content.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: WHAT IS TEXT STYLING -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is Text Styling?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Text styling in CSS means controlling how text looks and is displayed on a webpage, including font, size, color, and spacing.
+                    </div>
+                    <div class="lang-ar">
+                        Text Styling في CSS يعني التحكم في شكل النص في الصفحة زي اختيار نوع الخط، حجمه، لونه، والمسافات بين السطور والحروف.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: FONT FAMILY & TYPES -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Font Family & Types</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        CSS uses 'Font Stacks' as fallbacks. If the first font isn't on the user's computer, it moves to the next.
+                    </div>
+                    <div class="lang-ar">
+                        نوع الخط (Font Family) بيتحدد بقائمة خطوط احتياطية، لو أول واحد مش موجود المتصفح بيجرب اللي بعده.
+                    </div>
+                </div>
+                <div class="preview-grid">
+                    <div class="preview-card">
+                        <span class="preview-label">SERIF (زوائد)</span>
+                        <div class="font-serif">The quick brown fox</div>
+                    </div>
+                    <div class="preview-card">
+                        <span class="preview-label">SANS-SERIF (بسيط)</span>
+                        <div class="font-sans">The quick brown fox</div>
+                    </div>
+                    <div class="preview-card">
+                        <span class="preview-label">MONOSPACE (متساوي)</span>
+                        <div class="font-mono">The quick brown fox</div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    p { <br>
+                    &nbsp;&nbsp;font-family: "Arial", "Verdana", sans-serif; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 3: FONT SIZE & WEIGHT -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Font Size, Weight & Style</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Size controls dimensions (px/rem/em), weight controls thickness (bold), and style controls slanting (italic).
+                    </div>
+                    <div class="lang-ar">
+                        حجم الخط بتقدر تتحكم فيه بوحدات زي الـ px (ثابت) أو الـ rem (نسبة للصفحة). وكمان تقدر تخليه عريض (bold) أو مائل (italic).
+                    </div>
+                </div>
+                <div class="code-block">
+                    p { <br>
+                    &nbsp;&nbsp;font-size: 20px; <br>
+                    &nbsp;&nbsp;font-weight: bold; <br>
+                    &nbsp;&nbsp;font-style: italic; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 4: TEXT DECORATION & TRANSFORM -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Text Decoration & Transform</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <b>Transform:</b> Change case (UPPERCASE). <br>
+                        <b>Decoration:</b> Add underlines or strike-through lines.
+                    </div>
+                    <div class="lang-ar">
+                        <b>التحويل:</b> بيغير حالة الحروف يخليها كابيتال مثلاً. <br>
+                        <b>الزخرفة:</b> بتضيف خطوط تحت الكلام أو فوقه (underline).
+                    </div>
+                </div>
+                <div class="code-block">
+                    h1 { <br>
+                    &nbsp;&nbsp;text-transform: uppercase; <br>
+                    &nbsp;&nbsp;text-decoration: underline; <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 5: TEXT SHADOW (The Wow Factor) -->
+            <div class="section-block" style="border: 1px solid rgba(0, 247, 255, 0.2); padding: 2rem; border-radius: 12px; background: rgba(0, 0, 0, 0.4);">
+                <h4 class="section-subtitle">Text Shadow</h4>
+                <div class="shadow-demo">CYBER DESIGN</div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Add depth and glowing effects using text-shadow. (x-offset, y-offset, blur, color).
+                    </div>
+                    <div class="lang-ar">
+                        بتضيف عمق أو توهج (Glow) وضل للنص عشان يبقى بارز وشكله احترافي.
+                    </div>
+                </div>
+                <div class="code-block">
+                    h1 { <br>
+                    &nbsp;&nbsp;text-shadow: 2px 2px 10px var(--primary); <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 6: ALIGNMENT & SPACING -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Alignment & Spacing</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Control paragraph layout and space between letters, words, and lines for better readability.
+                    </div>
+                    <div class="lang-ar">
+                        بتقدر تحازي النص (شمال، يمين، وسط) وتتحكم في المسافات بين الحروف والكلمات وحتى السطور عشان يبقى الكلام مريح للعين.
+                    </div>
+                </div>
+                <div class="code-block" style="border-left-color: var(--secondary);">
+                    p { <br>
+                    &nbsp;&nbsp;text-align: center; <br>
+                    &nbsp;&nbsp;line-height: 1.6; <br>
+                    &nbsp;&nbsp;letter-spacing: 2px; <br>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

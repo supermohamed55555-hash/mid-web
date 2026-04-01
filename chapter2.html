@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: HTML Basics | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">02</div>
+            <h1>HTML Basics</h1>
+            <p>Mastering the building blocks of the web: Elements, Attributes, and Structure.</p>
+        </header>
+
+        <div class="chapter-content">
+            <!-- Section 1: What is HTML? -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is HTML?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        HTML (HyperText Markup Language) is the standard language used to create web pages. It tells the browser how to structure and display content on a webpage.
+                    </div>
+                    <div class="lang-ar">
+                        HTML هو اللغة الأساسية المستخدمة لإنشاء صفحات الويب، وهو اللي بيقول للمتصفح يرتب ويعرض المحتوى إزاي.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: HTML Elements -->
+            <div class="section-block">
+                <h4 class="section-subtitle">HTML Elements</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        HTML is made of elements. Each element is used to represent a specific part of the content like a paragraph, heading, or image.
+                    </div>
+                    <div class="lang-ar">
+                        HTML مكون من عناصر، وكل عنصر بيستخدم لعرض جزء معين من الصفحة زي نص أو عنوان.
+                    </div>
+                </div>
+                <div class="code-block">&lt;p&gt;My cat is very grumpy&lt;/p&gt;</div>
+            </div>
+
+            <!-- Section 3: Anatomy of an Element -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Anatomy of an Element</h4>
+                <div class="diagram-container">
+                    <svg width="500" height="150" viewBox="0 0 500 150">
+                        <!-- Labels -->
+                        <text x="100" y="30" fill="var(--primary)" font-size="12" text-anchor="middle">Opening Tag</text>
+                        <text x="250" y="30" fill="var(--text-main)" font-size="12" text-anchor="middle">Content</text>
+                        <text x="400" y="30" fill="var(--secondary)" font-size="12" text-anchor="middle">Closing Tag</text>
+
+                        <!-- Element visualization -->
+                        <rect x="50" y="50" width="100" height="50" rx="4" fill="var(--primary)" opacity="0.1" stroke="var(--primary)" stroke-width="2" />
+                        <text x="100" y="80" fill="var(--primary)" font-size="18" text-anchor="middle" font-family="monospace">&lt;p&gt;</text>
+
+                        <text x="250" y="80" fill="var(--text-main)" font-size="18" text-anchor="middle">Hello World</text>
+
+                        <rect x="350" y="50" width="100" height="50" rx="4" fill="var(--secondary)" opacity="0.1" stroke="var(--secondary)" stroke-width="2" />
+                        <text x="400" y="80" fill="var(--secondary)" font-size="18" text-anchor="middle" font-family="monospace">&lt;/p&gt;</text>
+
+                        <!-- Arrows -->
+                        <path d="M 100 105 L 100 120" stroke="var(--primary)" stroke-width="1" fill="none" />
+                        <path d="M 250 105 L 250 120" stroke="var(--text-main)" stroke-width="1" fill="none" />
+                        <path d="M 400 105 L 400 120" stroke="var(--secondary)" stroke-width="1" fill="none" />
+                        
+                        <text x="250" y="140" fill="var(--text-dim)" font-size="10" text-anchor="middle">A complete HTML Element</text>
+                    </svg>
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        An HTML element consists of an Opening tag, Content, and a Closing tag. Missing the closing tag can cause layout issues.
+                    </div>
+                    <div class="lang-ar">
+                        العنصر بيتكون من: بداية العنصر (Opening Tag)، المحتوى، ونهاية العنصر (Closing Tag). نسيان الـ closing tag ممكن يعمل مشاكل في الصفحة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Nesting -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Nesting Elements</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Elements can be placed inside other elements. This is called nesting. Ensure you close them in the correct order.
+                    </div>
+                    <div class="lang-ar">
+                        ممكن تحط عنصر جوه عنصر تاني، وده بنسميه Nesting. لازم تفتح وتقفل العناصر بالترتيب الصح.
+                    </div>
+                </div>
+                <div class="code-block">&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy&lt;/p&gt;</div>
+            </div>
+
+            <!-- Section 5: Void Elements -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Void Elements</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Some elements don’t have closing tags. They are called void elements. Examples include break tags and images.
+                    </div>
+                    <div class="lang-ar">
+                        في عناصر ملهاش closing tag ودي اسمها Void Elements. زي مثلاً الـ break أو الصور.
+                    </div>
+                </div>
+                <div class="code-block">
+                    &lt;br&gt;<br>
+                    &lt;img src="image.jpg"&gt;
+                </div>
+            </div>
+
+            <!-- Section 6: Attributes -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Attributes</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Attributes provide extra information about elements. They always go inside the opening tag.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Attributes بتضيف معلومات إضافية للعنصر، ودايماً بتتكتب في الـ opening tag.
+                    </div>
+                </div>
+                <div class="code-block">&lt;p class="note"&gt;Hello&lt;/p&gt;</div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Common Attributes:</strong> src (image source), alt (description), width/height (size).
+                    </div>
+                    <div class="lang-ar">
+                        <strong>خصائص مشهورة:</strong> src (مصدر الصورة)، alt (وصف الصورة)، و width/height (الحجم).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Boolean Attributes -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Boolean Attributes</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Some attributes don’t need values. If they exist, they are considered true.
+                    </div>
+                    <div class="lang-ar">
+                        في Attributes مش محتاجة قيمة، مجرد وجودها يعني إنها مفعلة (True).
+                    </div>
+                </div>
+                <div class="code-block">&lt;input disabled&gt;</div>
+            </div>
+
+            <!-- Section 8: Links -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Links Example</h4>
+                <div class="code-block">&lt;a href="https://google.com"&gt;Go to Google&lt;/a&gt;</div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        The <strong>href</strong> attribute defines the destination URL.
+                    </div>
+                    <div class="lang-ar">
+                        الـ <strong>href</strong> بيحدد المكان أو اللينك اللي هتروحله لما تضغط.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 9: Document Structure -->
+            <div class="section-block">
+                <h4 class="section-subtitle">HTML Document Structure</h4>
+                <div class="code-block">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &nbsp;&nbsp;&lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Page&lt;/title&gt;<br>
+                    &nbsp;&nbsp;&lt;/head&gt;<br>
+                    &nbsp;&nbsp;&lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is my page&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>&lt;!DOCTYPE html&gt;:</strong> Defines HTML version. <br>
+                        <strong>&lt;html&gt;:</strong> Root element. <br>
+                        <strong>&lt;head&gt;:</strong> Contains metadata. <br>
+                        <strong>&lt;title&gt;:</strong> Page title in browser tab. <br>
+                        <strong>&lt;body&gt;:</strong> Contains visible content.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>DOCTYPE:</strong> تعريف نوع الصفحة. <br>
+                        <strong>html:</strong> العنصر الرئيسي. <br>
+                        <strong>head:</strong> معلومات الصفحة (زي العنوان والـ SEO). <br>
+                        <strong>title:</strong> عنوان الصفحة اللي بيظهر في التاب. <br>
+                        <strong>body:</strong> المحتوى اللي بيظهر للمستخدم.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 10: Misc -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Whitespace & Special Characters</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <strong>Whitespace:</strong> Extra spaces in code are ignored by the browser. <br>
+                        <strong>Special Characters:</strong> Symbols like &lt; or &gt; must be encoded as &amp;lt; or &amp;gt;.
+                    </div>
+                    <div class="lang-ar">
+                        <strong>المسافات:</strong> المسافات الكتير في الكود المتصفح بيتجاهلها. <br>
+                        <strong>الرموز الخاصة:</strong> في رموز لازم تكتب بطريقة خاصة زي &amp;lt; و &amp;gt;.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 11: Comments -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Comments</h4>
+                <div class="code-block">&lt;!-- This is a comment --&gt;</div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Comments are ignored by the browser and are used for documentation.
+                    </div>
+                    <div class="lang-ar">
+                        التعليقات المتصفح مش بيشوفها، بنستخدمها بس عشان نسيب ملاحظات لينا في الكود.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

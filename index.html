@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Web | Zero to Hero</title>
+    <meta name="description" content="A premium interactive guide to mastering Web Development. Covering 9 essential chapters with a futuristic, cyber-inspired interface.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <h1>Master Web<br><span class="accent">Zero</span> to Hero</h1>
+        <p>Dive into the world of professional web development with our structured 9-chapter guide. Every line of code tells a story, and yours starts now.</p>
+        <button class="btn-primary" onclick="document.getElementById('chapters').scrollIntoView({behavior: 'smooth'})">EXPLORE CHAPTERS</button>
+    </header>
+
+    <section class="chapters" id="chapters">
+        <h2 class="section-title">COURSE MODULES</h2>
+        <div class="grid">
+            <!-- Chapter 1 -->
+            <a href="chapter1.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">01</div>
+                    <h3>Foundations of Web</h3>
+                    <p>Establishing the core concepts of how the web works, HTTP protocols, and the architecture of a modern web application.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 2 -->
+            <a href="chapter2.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">02</div>
+                    <h3>HTML Basics</h3>
+                    <p>Understanding the building blocks of the web: Elements, Attributes, and Structure.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 3 -->
+            <a href="chapter3.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">03</div>
+                    <h3>Lists, Tables & Forms</h3>
+                    <p>Structuring complex data, handling user interactions, and building interactive web components.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 4 -->
+            <a href="chapter4.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">04</div>
+                    <h3>CSS Basics</h3>
+                    <p>Styling and designing web pages. Mastering colors, fonts, layouts, and the Cascading model.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 5 -->
+            <a href="chapter5.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">05</div>
+                    <h3>CSS Selectors</h3>
+                    <p>Targeting HTML elements with precision. Mastering ID, Class, and complex targeting rules.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 6 -->
+            <a href="chapter6.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">06</div>
+                    <h3>Fonts & Text Styling</h3>
+                    <p>Mastering typography, weight, spacing, and visual text effects to create readable and beautiful content.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 7 -->
+            <a href="chapter7.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">07</div>
+                    <h3>Advanced Text Styling</h3>
+                    <p>Mastering link states, web font integration, list styling, and sophisticated layout controls for modern UIs.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 8 -->
+            <a href="chapter8.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">08</div>
+                    <h3>CSS Styling Lists</h3>
+                    <p>Advanced control over bullet types, list positioning, custom markers, and ordered list logic.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+            <!-- Chapter 9 -->
+            <a href="chapter9.html" class="card-link">
+                <div class="card">
+                    <div class="card-num">09</div>
+                    <h3>Responsive Web Design</h3>
+                    <p>Building layouts for every device. Mastering Media Queries, fluid units, and Mobile-First strategies.</p>
+                    <div class="explore-btn">LEARN MORE</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <!-- Chapter Modal -->
+    <div id="chapter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body">
+                <h2 id="modal-title">Chapter Title</h2>
+                <div class="modal-divider"></div>
+                <div id="chapter-text">
+                    <p>Fetching content from the database...</p>
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

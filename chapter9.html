@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Responsive Web Design | Master Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chapter-page {
+            padding: 120px 5% 60px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: var(--neon-glow);
+        }
+        .chapter-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        .chapter-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chapter-header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Visualizer */
+        .responsive-visual {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(0, 247, 255, 0.2);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .device-icons {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        .device {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dim);
+            transition: var(--transition);
+        }
+        .device.active { color: var(--primary); transform: scale(1.1); }
+        
+        .grid-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .grid-box {
+            background: rgba(0, 247, 255, 0.1);
+            border: 1px solid var(--primary);
+            height: 60px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-preview { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .grid-preview { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">WEB MASTERY</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="chapter-page">
+        <a href="index.html#chapters" class="back-link">← BACK TO DASHBOARD</a>
+        
+        <header class="chapter-header">
+            <div class="card-num" style="position: static; opacity: 0.2; font-size: 5rem; margin-bottom: -2rem;">09</div>
+            <h1>Responsive Web Design</h1>
+            <p>One site for every device: Mastering flexibility, Fluid layouts, and Media Queries.</p>
+        </header>
+
+        <div class="chapter-content">
+            
+            <!-- SECTION 1: WHAT IS RESPONSIVE DESIGN -->
+            <div class="section-block">
+                <h4 class="section-subtitle">What is Responsive Design?</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Responsive Web Design (RWD) is a way of designing websites so they work well on all devices (mobile, tablet, laptop). The goal is one site for every screen.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Responsive Design هو تصميم المواقع بحيث تشتغل كويس على كل الأجهزة (موبايل، تابلت، لابتوب). الهدف إنك تعمل موقع واحد ذكي بيعرف يتأقلم لوحده على أي شاشة.
+                    </div>
+                </div>
+                <div class="responsive-visual">
+                    <div class="device-icons">
+                        <div class="device active">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <span>Desktop</span>
+                        </div>
+                        <div class="device">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                            <span>Tablet</span>
+                        </div>
+                        <div class="device">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="19" x2="12" y2="19"/></svg>
+                            <span>Mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: MEDIA QUERIES -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Media Queries</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Media queries allow you to apply specific CSS rules based on screen width, device orientation, or resolution.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Media Queries هي أهم أداة في الـ CSS، لأنها بتخليك تطبق تصميم معين بس لما الشاشة توصل لحجم انت محدده (مثلاً لو الشاشة أصغر من 768px يغير اللون).
+                    </div>
+                </div>
+                <div class="code-block">
+                    /* Tablet & Mobile Styles */ <br>
+                    <span style="color:var(--secondary)">@media</span> (max-width: 768px) { <br>
+                    &nbsp;&nbsp;body { background-color: black; } <br>
+                    &nbsp;&nbsp;h1 { font-size: 1.5rem; } <br>
+                    }
+                </div>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <b>Breakpoints:</b> Common sizes like 600px, 768px, or 1200px where the layout shifts.
+                    </div>
+                    <div class="lang-ar">
+                        <b>Breakpoints:</b> دي أحجام الشاشات اللي عندها التصميم بيبدأ يتغير، زي مقاس الموبايل أو التابلت.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: MOBILE FIRST DESIGN -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Mobile First Design</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Start designing for the smallest screens first, then use media queries to expand the design for larger screens.
+                    </div>
+                    <div class="lang-ar">
+                        الفكر الأصح إنك تبدأ تصمم للموبايل الأول (الشاشات الصغيرة)، وبعد كدة تبدأ "تكبر" التصميم وتضيف مساحات وحاجات أكتر للأجهزة الكبيرة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: FLEXIBLE LAYOUTS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Flexible Layouts (Flex & Grid)</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Use relative units (%, rem, vw) and modern layout engines like Flexbox and Grid that handle resizing automatically.
+                    </div>
+                    <div class="lang-ar">
+                        استخدم وحدات مرنة بدل الأرقام الثابتة (px). الـ Flexbox والـ Grid بيوفروا لك مرونة خرافية؛ العناصر بتتحرك وبتترتب لوحدها حسب المساحة المتاحة.
+                    </div>
+                </div>
+                <div class="grid-preview" style="margin: 2rem auto;">
+                    <div class="grid-box">Item 1</div>
+                    <div class="grid-box">Item 2</div>
+                    <div class="grid-box">Item 3</div>
+                </div>
+                <div class="code-block" style="border-left-color: var(--secondary);">
+                    .container { <br>
+                    &nbsp;&nbsp;display: grid; <br>
+                    &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); <br>
+                    }
+                </div>
+            </div>
+
+            <!-- SECTION 5: RESPONSIVE ASSETS -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Responsive Images & Text</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        <b>Images:</b> Use <i>max-width: 100%</i> to prevent images from overflowing their container. <br>
+                        <b>Text:</b> Use <i>calc()</i> or <i>vw</i> units to make text size fluid.
+                    </div>
+                    <div class="lang-ar">
+                        <b>الصور:</b> لازم تديها عرض 100% كحد أقصى عشان متطلعش بره حدود الشاشة. <br>
+                        <b>النصوص:</b> ممكن نستخدم معادلات حسابية عشان حجم الكلام يصغر ويكبر حسب حجم الشاشة.
+                    </div>
+                </div>
+                <div class="code-block">
+                    img { max-width: 100%; height: auto; } <br>
+                    h1 { font-size: calc(1.5rem + 2vw); }
+                </div>
+            </div>
+
+            <!-- SECTION 6: VIEWPORT META TAG -->
+            <div class="section-block" style="background: rgba(255, 0, 229, 0.05); border: 1px solid var(--secondary); padding: 2rem; border-radius: 12px;">
+                <h4 class="section-subtitle" style="color: var(--secondary);">The Viewport Meta Tag</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        Crucial for mobile devices. It tells the browser how to control the page's dimensions and scaling.
+                    </div>
+                    <div class="lang-ar">
+                        الـ Viewport Meta Tag ده أهم سطر للموبايل. من غيره، المتصفح هيعرض الموقع كأنه على كمبيوتر، وشكله هيبقى بايظ تماماً على الموبايل.
+                    </div>
+                </div>
+                <div class="code-block" style="background: #000; border: none;">
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+            &gt;&gt; System Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+        <p class="copyright" style="margin-top: 3rem; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 WEB MASTERY - Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
