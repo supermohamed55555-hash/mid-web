@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Web | Mega Practice Arena (80+ Questions)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .practice-page {
+            padding: 120px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .arena-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+        .arena-link {
+            padding: 0.8rem 1.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        .arena-link:hover {
+            box-shadow: 0 0 15px var(--primary);
+            background: var(--primary);
+            color: #000;
+        }
+
+        .q-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+        .quiz-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 247, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+        .quiz-card:hover { border-color: var(--primary); }
+        .q-label { font-size: 0.8rem; letter-spacing: 2px; color: var(--secondary); margin-bottom: 0.5rem; display: block; font-weight: 900; }
+        .q-text { font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .answer-box { display: none; padding: 1rem; margin-top: 1rem; border-left: 3px solid var(--primary); background: rgba(0, 247, 255, 0.05); }
+
+        .btn-reveal {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">MASTER WEB</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#chapters">Chapters</a></li>
+        </ul>
+    </nav>
+
+    <main class="practice-page">
+        <header class="exam-header" style="text-align: center; margin-bottom: 4rem;">
+            <h1>MEGA Practice <span>ARENA</span></h1>
+            <p>80 questions designed to prepare you for the final & midterm. Master everything from Zero to Hero.</p>
+        </header>
+
+        <div class="arena-nav">
+            <a href="#mcq" class="arena-link">20 CHOOSE</a>
+            <a href="#usage" class="arena-link">20 TAG USAGE</a>
+            <a href="#complete" class="arena-link">20 COMPLETE</a>
+            <a href="#source" class="arena-link">20 SOURCE HTML</a>
+        </div>
+
+        <!-- 1: 20 CHOOSE QUESTIONS -->
+        <section id="mcq" class="quiz-section">
+            <h2 class="section-title">Q1: Multiple Choice (20 Questions)</h2>
+            <div class="q-grid">
+                <!-- MCQ items generated here -->
+                <div class="quiz-card"><span class="q-label">MCQ 1</span><p class="q-text">Which tag defines the most important heading?</p><div class="options">a) &lt;h6&gt; | b) &lt;heading&gt; | c) &lt;h1&gt; | d) &lt;head&gt;</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: c) &lt;h1&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 2</span><p class="q-text">Attribute for defining the destination of a link?</p><div class="options">a) link | b) href | c) src | d) target</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) href</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 3</span><p class="q-text">Which is NOT a valid value for CSS <code style="color:var(--primary)">display</code>?</p><div class="options">a) block | b) inline | c) grid | d) center</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: d) center (It's a value for text-align, not display)</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 4</span><p class="q-text">Character to represent an ID selector in CSS?</p><div class="options">a) . | b) # | c) ! | d) @</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) #</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 5</span><p class="q-text">Which tag is used to create an unordered list?</p><div class="options">a) &lt;ol&gt; | b) &lt;ul&gt; | c) &lt;li&gt; | d) &lt;dl&gt;</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) &lt;ul&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 6</span><p class="q-text">Default value of <code style="color:var(--primary)">position</code> property?</p><div class="options">a) relative | b) fixed | c) static | d) absolute</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: c) static</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 7</span><p class="q-text">The <code style="color:var(--primary)">calc()</code> function prevents ______ fonts on small screens.</p><div class="options">a) big | b) hardly readable | c) bright | d) bold</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) hardly readable</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 8</span><p class="q-text">Used to span multiple columns in a table?</p><div class="options">a) rowspan | b) colspan | c) column-span | d) width</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) colspan</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 9</span><p class="q-text">Which tag is a Void Element?</p><div class="options">a) &lt;p&gt; | b) &lt;img&gt; | c) &lt;div&gt; | d) &lt;span&gt;</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) &lt;img&gt; (No closing tag needed)</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 10</span><p class="q-text">Property to change font size?</p><div class="options">a) font-weight | b) font-size | c) text-size | d) font-style</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) font-size</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 11</span><p class="q-text">Correct HTML structure order?</p><div class="options">a) body > head | b) head > body | c) html > head > body | d) doctype > html > head > body</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: d) doctype > html > head > body</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 12</span><p class="q-text">CSS property for bold text?</p><div class="options">a) font-style | b) font-weight | c) text-bold | d) font-variant</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) font-weight: bold;</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 13</span><p class="q-text">Tag for a single table row?</p><div class="options">a) &lt;row&gt; | b) &lt;tr&gt; | c) &lt;td&gt; | d) &lt;th&gt;</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) &lt;tr&gt; (Table Row)</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 14</span><p class="q-text">Attribute for image alternate text?</p><div class="options">a) title | b) alt | c) name | d) desc</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) alt</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 15</span><p class="q-text">Value for a link to open in a new tab?</p><div class="options">a) _self | b) _parent | c) _blank | d) _top</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: c) _blank</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 16</span><p class="q-text">Unit relative to the font size of the parent?</p><div class="options">a) rem | b) em | c) px | d) %</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) em</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 17</span><p class="q-text">Which is a semantic tag?</p><div class="options">a) &lt;div&gt; | b) &lt;span&gt; | c) &lt;article&gt; | d) &lt;b&gt;</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: c) &lt;article&gt; (Gives meaning to the content)</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 18</span><p class="q-text">CSS property to change the mouse cursor?</p><div class="options">a) mouse | b) cursor | c) pointer | d) icon</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) cursor</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 19</span><p class="q-text">Selector for all &lt;p&gt; inside &lt;div&gt;?</p><div class="options">a) div+p | b) div p | c) div.p | d) div>p</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: b) div p (Descendant selector)</div></div>
+                <div class="quiz-card"><span class="q-label">MCQ 20</span><p class="q-text">Purpose of the Viewport Meta tag?</p><div class="options">a) SEO | b) Security | c) Scaling on mobile | d) Loading JS</div><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Correct: c) Scaling on mobile (Responsive design)</div></div>
+            </div>
+        </section>
+
+        <!-- 2: 20 TAG USAGE QUESTIONS -->
+        <section id="usage" class="quiz-section">
+            <h2 class="section-title">Q2: Tag Functions & Usage (20 Questions)</h2>
+            <div class="q-grid">
+                <div class="quiz-card"><span class="q-label">USAGE 1</span><p class="q-text">&lt;thead&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Groups the header content in a table. | بيجمع صفوف رأس الجدول.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 2</span><p class="q-text">&lt;tbody&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Groups the main data content in a table. | بيجمع محتوى الجدول الرئيسي.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 3</span><p class="q-text">&lt;meta&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Provides metadata (info about data) like charset or viewport. | بيوصف معلومات الصفحة للمتصفح.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 4</span><p class="q-text">&lt;link&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Links an external stylesheet (CSS) to the HTML. | بيربط ملف الـ CSS الخارجي.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 5</span><p class="q-text">&lt;label&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines a label for an input element (improves accessibility). | بيعرف اسم ووصف للحقل وبيرتبط بيه الـ ID.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 6</span><p class="q-text">&lt;footer&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines the footer of a page or section. | تذييل الصفحة (بيكون فيه اللينكات والكوبي رايت).</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 7</span><p class="q-text">&lt;br&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Inserts a single line break in text. | بينزل سطر جديد.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 8</span><p class="q-text">&lt;strong&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Indicates important text (semantic bold). | كلام مهم جداً للمتصفح.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 9</span><p class="q-text">&lt;mark&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Highlights/marks text for reference. | بيظلل النص (هايلايتر أصفر).</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 10</span><p class="q-text">&lt;code&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines a piece of computer code. | بيعرض كود برمجي.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 11</span><p class="q-text">&lt;dl&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines a description list. | قائمة للمصطلحات وتعريفاتها.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 12</span><p class="q-text">&lt;hr&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Horizontal rule: used to separate thematic content. | خط أفقي للفصل بين المواضيع.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 13</span><p class="q-text">&lt;caption&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines a title/caption for a table. | عنوان للجدول بالكامل.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 14</span><p class="q-text">&lt;sup&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines superscript text (O^2). | نص علوي (للقوى الرياضية).</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 15</span><p class="q-text">&lt;sub&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines subscript text (O_2). | نص سفلي (للرموز الكيميائية).</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 16</span><p class="q-text">&lt;nav&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines navigation links. | بيحتوي على لينكات التنقل الأساسية.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 17</span><p class="q-text">&lt;fieldset&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Groups related elements in a form. | بيحيط مجموعة من حقول الفورم ببرواز.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 18</span><p class="q-text">&lt;legend&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Defines a caption for &lt;fieldset&gt;. | عنوان لمجموعة حقول الفورم.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 19</span><p class="q-text">&lt;input type="submit"&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Submits form data to the server. | زرار إرسال البيانات للسيرفر.</div></div>
+                <div class="quiz-card"><span class="q-label">USAGE 20</span><p class="q-text">&lt;form action="..."&gt;</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Specifies where the form data is sent. | بيحدد الصفحة اللي هيروح لها البيانات.</div></div>
+            </div>
+        </section>
+
+        <!-- 3: 20 COMPLETE THE FOLLOWING -->
+        <section id="complete" class="quiz-section">
+            <h2 class="section-title">Q3: Complete the Following (20 Questions)</h2>
+            <div class="q-grid">
+                <div class="quiz-card"><span class="q-label">COMPLETE 1</span><p class="q-text">CSS stands for __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Cascading Style Sheets</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 2</span><p class="q-text">Hyperlinks are created using the __________ tag.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">&lt;a&gt; (Anchor Tag)</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 3</span><p class="q-text">The default space between table cells is controlled by __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">border-spacing</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 4</span><p class="q-text">To target a specific element with ID, use the __________ symbol.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Hash (#)</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 5</span><p class="q-text">In RGB, the values range from __________ to __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">0 to 255</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 6</span><p class="q-text">HTML is a __________ language, not a programming language.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Markup</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 7</span><p class="q-text">__________ tells the browser which HTML version is used.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">&lt;!DOCTYPE html&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 8</span><p class="q-text">The __________ tag contains visible page content.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">&lt;body&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 9</span><p class="q-text">An image file path is specified using the __________ attribute.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">src (Source)</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 10</span><p class="q-text">CSS comments start with __________ and end with __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">/* and */</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 11</span><p class="q-text">The box model consists of: Content, Padding, Border, and __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Margin</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 12</span><p class="q-text">To remove bullets from a list, use <code style="color:var(--primary)">list-style-type: __________</code>.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">none</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 13</span><p class="q-text">HTTP stands for __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">Hypertext Transfer Protocol</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 14</span><p class="q-text">The __________ attribute provides extra info about an element (tooltip).</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">title</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 15</span><p class="q-text">Inline styles are written inside the __________ attribute.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">style</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 16</span><p class="q-text">To make text uppercase, use <code style="color:var(--primary)">text-transform: __________</code>.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">uppercase</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 17</span><p class="q-text">A hex color code starts with the __________ symbol.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box"># (Hash)</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 18</span><p class="q-text">The __________ tag is used for the largest font size heading.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">&lt;h1&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 19</span><p class="q-text">To group multiple options in a dropdown, use __________.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">&lt;optgroup&gt;</div></div>
+                <div class="quiz-card"><span class="q-label">COMPLETE 20</span><p class="q-text">__________ units are relative to the viewport height.</p><button class="btn-reveal" onclick="toggle(this)">REVEAL</button><div class="answer-box">vh (Viewport Height)</div></div>
+            </div>
+        </section>
+
+        <!-- 4: 20 SOURCE HTML QUESTIONS WITH VISUAL PREVIEW -->
+        <section id="source" class="quiz-section">
+            <h2 class="section-title">Q4: Write Source HTML (20 Questions + Visual Results)</h2>
+            <div class="q-grid">
+                
+                <div class="quiz-card">
+                    <span class="q-label">CODE 1</span>
+                    <p class="q-text">Create a button that says "SUBMIT" and is a submit type.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;button type="submit"&gt;SUBMIT&lt;/button&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <button type="submit" style="background:var(--primary); color:#000; border:none; padding:5px 15px; cursor:pointer;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 2</span>
+                    <p class="q-text">Create a table with 2 columns and 2 rows with a border.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;D&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <table border="1" style="border-collapse: collapse; width: 100px; text-align: center; color: white;">
+                                <tr><td>A</td><td>B</td></tr>
+                                <tr><td>C</td><td>D</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 3</span>
+                    <p class="q-text">Create an unordered list with square bullets.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;ul style="list-style-type: square;"&gt;&lt;li&gt;One&lt;/li&gt;&lt;li&gt;Two&lt;/li&gt;&lt;/ul&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <ul style="list-style-type: square; color: var(--primary); padding-left: 20px;">
+                                <li>One</li>
+                                <li>Two</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 4</span>
+                    <p class="q-text">Create a password input field with a placeholder.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;input type="password" placeholder="Pass..."&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <input type="password" placeholder="Pass..." style="background:#000; color:var(--primary); border:1px solid var(--primary); padding:5px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 5</span>
+                    <p class="q-text">Create a text with a yellow highlight.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;mark&gt;Important Text&lt;/mark&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <mark>Important Text</mark>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 6</span>
+                    <p class="q-text">Display a superscript and subscript (H2O and 10th).</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>H&lt;sub&gt;2&lt;/sub&gt;O | 10&lt;sup&gt;th&lt;/sup&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            H<sub>2</sub>O | 10<sup>th</sup>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 7</span>
+                    <p class="q-text">Create a form with a label "Name:" linked to an input.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;label for="n"&gt;Name:&lt;/label&gt; &lt;input id="n"&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <label for="n" style="color:var(--secondary);">Name:</label>
+                            <input id="n" style="background:#000; color:white; border:1px solid #444;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 8</span>
+                    <p class="q-text">Display text with a strike-through line.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;del&gt;50$&lt;/del&gt; 20$</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <del>50$</del> <span style="color:var(--primary)">20$</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 9</span>
+                    <p class="q-text">Create a link that opens in a new tab.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;a href="#" target="_blank"&gt;Open New Tab&lt;/a&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <a href="#" target="_blank" style="color:var(--primary); text-decoration: underline;">Open New Tab</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 10</span>
+                    <p class="q-text">Create a select dropdown with 3 options.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;select&gt;&lt;option&gt;Red&lt;/option&gt;&lt;option&gt;Blue&lt;/option&gt;&lt;option&gt;Green&lt;/option&gt;&lt;/select&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <select style="background:#000; color:#fff; border:1px solid var(--primary);">
+                                <option>Red</option>
+                                <option>Blue</option>
+                                <option>Green</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 11</span>
+                    <p class="q-text">Create a table with a header background color.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;tr style="background:cyan"&gt;&lt;th&gt;Title&lt;/th&gt;&lt;/tr&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <table border="1" style="width:100px; border-collapse: collapse;">
+                                <tr style="background:var(--primary); color:#000;"><th>Title</th></tr>
+                                <tr><td style="color:white; text-align:center;">Data</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 12</span>
+                    <p class="q-text">Using &lt;code&gt; to display 'hello world'.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;code&gt;console.log("hello world")&lt;/code&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <code>console.log("hello world")</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 13</span>
+                    <p class="q-text">Add a title (tooltip) to an image.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;img src="..." title="This is a tooltip"&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                             <div style="font-size:0.7rem; color:var(--text-dim)">(Hover to see tooltip)</div>
+                             <br>
+                             <img src="https://via.placeholder.com/50" title="This is a tooltip" alt="Demo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 14</span>
+                    <p class="q-text">Make a heading always UPPERCASE using CSS.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>h2 { text-transform: uppercase; }</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <h2 style="text-transform: uppercase; font-size: 1rem; color: var(--secondary);">loud heading</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 15</span>
+                    <p class="q-text">Create a description list for "HTML" and "CSS".</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Web Skeleton&lt;/dd&gt;&lt;/dl&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <dl>
+                                <dt style="color:var(--primary); font-weight:700;">HTML</dt>
+                                <dd style="color:#888; font-size:0.9rem;">- Web Skeleton</dd>
+                                <dt style="color:var(--primary); font-weight:700;">CSS</dt>
+                                <dd style="color:#888; font-size:0.9rem;">- Web Design</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 16</span>
+                    <p class="q-text">Create a radio button for choosing Male/Female.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;input type="radio" name="g"&gt; Male &lt;input type="radio" name="g"&gt; Female</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <input type="radio" name="g_demo"> <span style="color:white">Male</span>
+                            <input type="radio" name="g_demo"> <span style="color:white">Female</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 17</span>
+                    <p class="q-text">Add a checkbox for "I agree to Terms".</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;input type="checkbox"&gt; I agree</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <input type="checkbox"> <span style="color:white">I agree to Terms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 18</span>
+                    <p class="q-text">Change link color on HOVER using CSS.</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>a:hover { color: cyan; }</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <style>
+                                .hover-btn-demo:hover { color: var(--primary) !important; background: rgba(0, 247, 255, 0.1); }
+                            </style>
+                            <span class="hover-btn-demo" style="color:white; cursor:pointer; padding:5px; border:1px solid #444;">Hover over me</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 19</span>
+                    <p class="q-text">Create a nested list (UL inside OL).</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;ol&gt;&lt;li&gt;Main&lt;ul&gt;&lt;li&gt;Sub&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <ol style="color:var(--secondary); padding-left: 20px;">
+                                <li>Main Category
+                                    <ul style="color:var(--primary); padding-left: 20px;">
+                                        <li>Sub Item A</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <span class="q-label">CODE 20</span>
+                    <p class="q-text">Create a table row with a footer summary (tfoot).</p>
+                    <button class="btn-reveal" onclick="toggle(this)">REVEAL CODE & RESULT</button>
+                    <div class="answer-box">
+                        <code>&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</code>
+                        <div class="visual-result" style="margin-top:1rem; border: 1px dotted var(--primary); padding: 10px;">
+                            <table border="1" style="width:100px; border-collapse: collapse; text-align:center;">
+                                <tr><td style="color:white;">Data</td></tr>
+                                <tfoot style="background:#555; color:black;">
+                                    <tr><td>Total</td></tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="social-footer">
+        <div class="architect-info">
+             &gt;&gt; Exam Prep Architect: <span class="architect-name">Moahmed Ahmed</span>
+        </div>
+        <div class="social-btns">
+            <a href="https://www.linkedin.com/in/moahmed-ahmed-02523532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn linkedin">Linkedin</a>
+            <a href="https://github.com/supermohamed55555-hash" target="_blank" class="social-btn github">Github</a>
+            <a href="https://youtube.com/@moahmedahmed9619?si=KhrSEPUL35puGBmr" target="_blank" class="social-btn youtube">Youtube</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggle(btn) {
+            const box = btn.nextElementSibling;
+            if (box.style.display === 'block') {
+                box.style.display = 'none';
+                btn.textContent = 'REVEAL';
+            } else {
+                box.style.display = 'block';
+                btn.textContent = 'HIDE';
+            }
+        }
+    </script>
+</body>
+</html>
