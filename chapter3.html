@@ -274,42 +274,36 @@
 
             <!-- SECTION 3: FORMS -->
             <div class="section-block">
-                <h4 class="section-subtitle">HTML Forms</h4>
+                <h4 class="section-subtitle">HTML Forms (Input Types + Label)</h4>
                 <div class="bilingual-block">
                     <div class="lang-en">
-                        A form is used to collect user input, like logins, registrations, or search queries.
+                        Forms collect user data using different input types. Common input types include text, email, password, and submit. The &lt;label&gt; element is used to describe the input field clearly and improve usability (clicking the label focuses the input).
                     </div>
                     <div class="lang-ar">
-                        الـ Form بيستخدم عشان ياخد بيانات من المستخدم، زي تسجيل دخول أو بيانات شخصية.
+                        الـ Forms بتجمع بيانات المستخدم باستخدام أنواع مختلفة من الحقول. من أشهر الأنواع: text و email و password و submit. وعنصر &lt;label&gt; بيستخدم لوصف الحقل بشكل واضح وتحسين سهولة الاستخدام (لما تضغط عليه الماوس بيروح للحقل فوراً).
                     </div>
                 </div>
                 <div class="diagram-container">
                     <form class="cyber-form" onsubmit="return false;">
-                        <label>Name:</label>
-                        <input type="text" class="cyber-input" placeholder="Your Name">
-                        <label>Password:</label>
-                        <input type="password" class="cyber-input" placeholder="Your Password">
-                        <button class="cyber-btn">LOGIN</button>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" class="cyber-input" placeholder="Enter Name">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="cyber-input" placeholder="Enter Email">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" class="cyber-input" placeholder="Enter Password">
+                        <button class="cyber-btn" type="submit">SUBMIT</button>
                     </form>
                 </div>
                 <div class="code-block">
                     &lt;form&gt;<br>
-                    &nbsp;&nbsp;&lt;label&gt;Name:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="text"&gt;<br><br>
-                    &nbsp;&nbsp;&lt;label&gt;Password:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="password"&gt;<br><br>
-                    &nbsp;&nbsp;&lt;button&gt;Login&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="name"&gt;<br><br>
+                    &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="email" id="email"&gt;<br><br>
+                    &nbsp;&nbsp;&lt;label for="password"&gt;Password:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="password" id="password"&gt;<br><br>
+                    &nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
                     &lt;/form&gt;
-                </div>
-                <div class="bilingual-block">
-                    <div class="lang-en">
-                        <strong>Common Input Types:</strong> text, email, password, submit. <br>
-                        <strong>Attributes:</strong> placeholder (hint), type (behavior), name (ID for backend).
-                    </div>
-                    <div class="lang-ar">
-                        <strong>أنواع المدخلات:</strong> نص (text)، إيميل (email)، كلمة سر (password). <br>
-                        <strong>الخصائص:</strong> placeholder (نص توضيحي)، type (نوع الإدخال).
-                    </div>
                 </div>
             </div>
 
