@@ -150,15 +150,15 @@
                 <h4 class="section-subtitle">Void Elements</h4>
                 <div class="bilingual-block">
                     <div class="lang-en">
-                        Some elements don’t have closing tags. They are called void elements. Examples include break tags and images.
+                        Some HTML elements do not need a closing tag. These are called void elements. They are used to insert something into the page, such as an image or a line break.
                     </div>
                     <div class="lang-ar">
-                        في عناصر ملهاش closing tag ودي اسمها Void Elements. زي مثلاً الـ break أو الصور.
+                        بعض عناصر HTML لا تحتاج إلى closing tag، ودي اسمها Void Elements. وتستخدم لإضافة شيء داخل الصفحة، مثل صورة أو سطر جديد.
                     </div>
                 </div>
                 <div class="code-block">
-                    &lt;br&gt;<br>
-                    &lt;img src="image.jpg"&gt;
+                    &lt;img src="image.jpg" alt="Example Image"&gt;<br>
+                    &lt;br&gt;
                 </div>
             </div>
 
@@ -270,6 +270,93 @@
                     <div class="lang-ar">
                         التعليقات المتصفح مش بيشوفها، بنستخدمها بس عشان نسيب ملاحظات لينا في الكود.
                     </div>
+                </div>
+            </div>
+
+            <!-- REDESIGNED: Text Formatting Section -->
+            <div class="section-block">
+                <h4 class="section-subtitle">Formatting Text with HTML</h4>
+                <div class="bilingual-block">
+                    <div class="lang-en">
+                        HTML provides special tags to format text. While CSS is better for styling, these tags give meaning (semantics) to your content.
+                    </div>
+                    <div class="lang-ar">
+                        HTML بيوفرلك تاجات جاهزة عشان تغير شكل الكلام وتديله معنى معين في الصفحة، من غير ما تحتاج تكتب CSS في الأول.
+                    </div>
+                </div>
+
+                <div class="formatting-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    
+                    <!-- B & STRONG -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;b&gt; & &lt;strong&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Bold text. <b>&lt;b&gt;</b> is just for look, while <b>&lt;strong&gt;</b> means the text is important. <br>
+                            <strong>AR:</strong> بيخلي الخط "عريض". الـ <b>b</b> للشكل بس، لكن الـ <b>strong</b> بتقول للمتصفح إن الكلام ده مهم جداً.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><b>Bold</b> vs <strong>Important</strong></div>
+                    </div>
+
+                    <!-- I & EM -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;i&gt; & &lt;em&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Italic text. <b>&lt;i&gt;</b> is visual, while <b>&lt;em&gt;</b> emphasizes the pronunciation or meaning. <br>
+                            <strong>AR:</strong> بيخلي الخط "مائل". الـ <b>i</b> للشكل، والـ <b>em</b> بتعمل تأكيد (Emphasize) على معنى الكلمة.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><i>Italic</i> vs <em>Emphasized</em></div>
+                    </div>
+
+                    <!-- MARK -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;mark&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Used to highlight parts of the text (like a spotlight). <br>
+                            <strong>AR:</strong> بيعمل "تظليل" أصفر ورا الكلمة كأنك معاك قلم هايلايتر.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><mark>Highlighted Content</mark></div>
+                    </div>
+
+                    <!-- CODE -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;code&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Used to display computer code or variables. <br>
+                            <strong>AR:</strong> بيستخدم عشان تعرض كود برمجي، بيدي شكل حروف الكمبيوتر التقنية.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><code>console.log("Hey")</code></div>
+                    </div>
+
+                    <!-- SUB & SUP -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;sub&gt; & &lt;sup&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Subscript (bottom) and Superscript (top). Great for math or chemistry. <br>
+                            <strong>AR:</strong> الـ <b>sub</b> بتنزل الكلمة لتحت (زي O<sub>2</sub>)، والـ <b>sup</b> بترفعها لفوق (زي 2<sup>2</sup>).
+                        </div>
+                        <div class="code-block" style="margin: 0;">H<sub>2</sub>O | 10<sup>th</sup> Floor</div>
+                    </div>
+
+                    <!-- DEL & INS -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;del&gt; & &lt;ins&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Represents deleted text (crossed out) and inserted text (underlined). <br>
+                            <strong>AR:</strong> الـ <b>del</b> بيشطب ع الكلام، والـ <b>ins</b> بيفهمنا إن الكلام ده مضاف جديد.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><del>Old</del> <ins>New</ins></div>
+                    </div>
+
+                    <!-- S & U -->
+                    <div class="status-item" style="text-align: left; padding: 1.5rem;">
+                        <span class="status-code">&lt;s&gt; & &lt;u&gt;</span>
+                        <div style="margin: 10px 0; font-size: 0.9rem;">
+                            <strong>EN:</strong> Strikethrough (no longer true) and Underline (visual underline). <br>
+                            <strong>AR:</strong> الـ <b>s</b> بتشطب خط في المنتصف، والـ <b>u</b> بتشد خط تحت الكلمة.
+                        </div>
+                        <div class="code-block" style="margin: 0;"><s>Incorrect</s> <u>Important</u></div>
+                    </div>
+
                 </div>
             </div>
         </div>
