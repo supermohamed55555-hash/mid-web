@@ -166,17 +166,37 @@
                 <h4 class="section-subtitle">Text Decoration & Transform</h4>
                 <div class="bilingual-block">
                     <div class="lang-en">
-                        <b>Transform:</b> Change case (UPPERCASE). <br>
-                        <b>Decoration:</b> Add underlines or strike-through lines.
+                        <b>Text Transform:</b> Changes the casing of the text. <br>
+                        - <i>uppercase</i>: ALL LETTERS CAPITAL. <br>
+                        - <i>lowercase</i>: all letters small. <br>
+                        - <i>capitalize</i>: First Letter Of Each Word Capital. <br><br>
+                        <b>Text Decoration:</b> Adds lines to the text (underline, overline, line-through).
                     </div>
                     <div class="lang-ar">
-                        <b>التحويل:</b> بيغير حالة الحروف يخليها كابيتال مثلاً. <br>
-                        <b>الزخرفة:</b> بتضيف خطوط تحت الكلام أو فوقه (underline).
+                        <b>التحويل (Transform):</b> بيغير حالة الحروف (كبيرة أو صغيرة). <br>
+                        - <i>uppercase</i>: بيخلي كل الحروف كابيتال. <br>
+                        - <i>lowercase</i>: بيخلي كل الحروف صغيرة. <br>
+                        - <i>capitalize</i>: بيخلي أول حرف من كل كلمة بس كابيتال. <br><br>
+                        <b>الزخرفة (Decoration):</b> بتضيف خطوط زي خط تحت الكلام (underline) أو شطب في النص.
+                    </div>
+                </div>
+                <div class="preview-grid" style="margin-top: 1rem;">
+                    <div class="preview-card" style="padding: 1rem;">
+                        <span class="preview-label">UPPERCASE</span>
+                        <div style="text-transform: uppercase;">this text is now loud</div>
+                    </div>
+                    <div class="preview-card" style="padding: 1rem;">
+                        <span class="preview-label">LOWERCASE</span>
+                        <div style="text-transform: lowercase;">THIS TEXT IS NOW QUIET</div>
+                    </div>
+                    <div class="preview-card" style="padding: 1rem;">
+                        <span class="preview-label">CAPITALIZE</span>
+                        <div style="text-transform: capitalize;">every first letter is big</div>
                     </div>
                 </div>
                 <div class="code-block">
                     h1 { <br>
-                    &nbsp;&nbsp;text-transform: uppercase; <br>
+                    &nbsp;&nbsp;text-transform: capitalize; <br>
                     &nbsp;&nbsp;text-decoration: underline; <br>
                     }
                 </div>
